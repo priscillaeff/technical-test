@@ -1,16 +1,14 @@
 import java.util.*;
-import java.util.HashMap;
-import java.util.Map;
 
 public class CatKitty {
-    //Map untuk aturan custom dengan key-value
+    //Map for custom rules with key-value
     private static Map<Integer, String> rules = new HashMap<>();
 
     public static void main(String[] args) {
-        //Contoh menambah aturan baru, (angka 13 = "dog")
+        //Example of adding a new rule, (number 13 = "dog")
         addRule(13, "dog");
         
-        //Meminta input dari user untuk batas jumlah angka
+        //Ask the user for the limit number
         Scanner userInput = new Scanner(System.in);
         System.out.println("Masukkan batas: ");
         int n =  userInput.nextInt();
@@ -19,38 +17,38 @@ public class CatKitty {
 
         boolean first = true;
 
-        //iterasi dari 1 sampai n
+        //Iterate from 1 to n
         for (int x = 1; x <= n; x++){
-            //handle koma (jika bukan angka pertama, tambahkan koma)
+            //Handle comma (add comma if it's not the first number)
             if(!first){
                 System.out.print(", ");
             }
 
-            //Cek jika ada aturan khusus untuk angka x
+            //Check if there is a custom rule for number x
             if(rules.containsKey(x)){
                 System.out.print(rules.get(x));
             } 
-            //Print "catKitty" jika angka x habis dibagi 3 dan 5
+            //Print "catKitty" if x is divisible by both 3 and 5
             else if (x % 3 == 0 && x % 5 == 0){
                 System.out.print("catKitty");
             } 
-            //Print "cat" jika angka x havis dibagi 3
+            //Print "cat" if x is divisible by 3
             else if (x % 3 == 0){
                 System.out.print("cat");
             } 
-            //Print "kitty" jika angka x habis dibagi 5
+            //Print "kitty" if x is divisible by 5
             else if (x % 5 == 0){
                 System.out.print("kitty");
             } else {
                 System.out.print(x);
             }
 
-            //Membuat koma sebelum output berikutnya
+            //Prepare for the next output with comma
             first = false;
         }
     }
 
-    //Fungsi untuk menambahkan rule angka dan output
+    //Function to add a rule with a number and its corresponding output
     public static void addRule(int number, String output){
         rules.put(number, output);
     }
