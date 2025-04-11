@@ -55,5 +55,3 @@ public class CatKitty {
         rules.put(number, output);
     }
 }
-
-//Disini saya menambahkan limit/batasan jumlah supaya output tidak generate sampai infinity (tidak ada spesifikasi khusus di perintah)
