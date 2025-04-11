@@ -23,7 +23,7 @@ app.get('/', (req: Request, res: Response) => {
 // });
 
 // --- Database Sync and Server Start ---
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 4000;
 const forceSync = process.env.NODE_ENV !== 'production'; // Force sync only in non-production
 
 sequelize.sync({ force: forceSync }) // Use force: true carefully, good for dev/test reset
